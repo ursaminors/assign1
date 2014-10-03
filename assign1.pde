@@ -10,7 +10,16 @@ int h = 50;
 // declare variables
 // --------------------------------------------
 // put your code inside here
-int totalScore = 0;
+int totalScore = 500;
+int a;
+int b;
+int c;
+int St ;
+int Nd ; 
+int Rd ;
+int m;
+int n;
+int o;
 
 // --------------------------------------------
 
@@ -49,6 +58,17 @@ void draw() {
       // -------------------------------------------------
       // put your code inside here
       
+      totalScore = totalScore - 50;
+      //int result = machine.probability(0.1);
+      
+      //random fruit
+      St = int(random(6));
+      Nd = int(random(6));
+      Rd = int(random(6));
+      //slot fruit
+      machine.setSlotFruit(0,St);
+      machine.setSlotFruit(1,Nd);
+      machine.setSlotFruit(2,Rd);
       
       // -------------------------------------------------
     }
@@ -63,6 +83,18 @@ void draw() {
       // -------------------------------------------------
       // put your code inside here
       
+      //fruitCount         
+      m = machine.getFruitCount(St) ; 
+      n = machine.getFruitCount(Nd) ;
+      o = machine.getFruitCount(Rd) ;
+
+      //getScore
+      a = machine.getSlotScore(St); 
+      b = machine.getSlotScore(Nd);
+      c = machine.getSlotScore(Rd);
+
+      //sum
+      totalScore = totalScore + a*m + b*n + c*o ;
  
  
  
